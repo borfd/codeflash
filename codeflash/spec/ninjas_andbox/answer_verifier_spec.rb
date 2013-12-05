@@ -1,4 +1,3 @@
-#require "spec_helper"
 require "ninja_sandbox/answer_verifier"
 require_relative "fakes/fake_answer.rb"
 
@@ -6,7 +5,7 @@ describe NinjaSandbox::AnswerVerifier do
 	before(:each) do
 		@answer = FakeAnswer.new
 	end
-	it "should update answer" do
+	it "should verify correct answer" do
 		NinjaSandbox::AnswerVerifier.stub(:find)
 			.with(@answer.id)
 			.and_return(@answer)
