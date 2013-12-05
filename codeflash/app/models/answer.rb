@@ -1,3 +1,5 @@
+require "ninja_sandbox/runnable_answer"
+
 class Answer < ActiveRecord::Base
-  belongs_to :flashcard
+	include NinjaSandbox::RunnableAnswer
 end

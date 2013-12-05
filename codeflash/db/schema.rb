@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204234905) do
+ActiveRecord::Schema.define(version: 20131205095539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,11 +20,9 @@ ActiveRecord::Schema.define(version: 20131204234905) do
     t.text     "code"
     t.text     "result"
     t.boolean  "correct"
-    t.integer  "flashcard_id_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "flashcard_id"
   end
-
-  add_index "answers", ["flashcard_id_id"], name: "index_answers_on_flashcard_id_id", using: :btree
 
 end

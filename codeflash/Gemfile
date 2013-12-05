@@ -43,6 +43,10 @@ end
 
 # gem "sandbox", path: "/Users/bfilipov/Code/codeflash-jruby/codeflash/vendor/jruby-sandbox"
 
+group :test do
+	gem 'shoulda-matchers'
+end
+
 group :development, :test do
   gem 'rspec-rails' 
 end
