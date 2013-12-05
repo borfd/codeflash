@@ -23,7 +23,6 @@ describe FlashcardController do
 		end
 	end
 
-
 	describe "POST #create" do
 		context "with valid attributes" do
 			it "creates a new Flashcard object" do
@@ -38,4 +37,5 @@ describe FlashcardController do
 			end
 		end
 	end
+
 end
