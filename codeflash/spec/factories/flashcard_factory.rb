@@ -1,23 +1,24 @@
 require 'factory_girl'
 
 
-
 FactoryGirl.define do
 
 	factory :answer do
-		correct false
+		correct true
+		code "42+2"
+		flashcard
 	end
 
 	factory :flashcard do
-		sequence :content do |n|
-			"1+#{n}"
+		result "44"
+		content "44"
+	
+		factory :flashcard_with_answers, :parent => :flashcard do |flashcard|
+			flashcard.after_create { |f| FactoryGirl.build(:answer, :flashcard => f)}
 		end
-		factory :flashcard_with_answers do
-			after(:create) do |card, evaluator|
-				FactoryGirl.create_list(:answer, 1, flashcard: card, code: content)
 
-			end
-		end
+	
+
 	end
 	
 end

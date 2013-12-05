@@ -66,3 +66,5 @@ end
 platform :ruby do
 	gem 'pg'
 end
+
+gem 'puma'

@@ -6,8 +6,6 @@ class Answer < ActiveRecord::Base
 	belongs_to :flashcard
 
 	validates_presence_of :code
-	validates_presence_of :correct
-	validates_presence_of :flashcard
 
 	def verify(result)
 		unless self.correct == result

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FlashcardsController do
 
-  permitted_attributes = [:content, :result, answers_attributes: [:code]]
+  permitted_attributes = [:content, :result, answers_attributes: [:correct, :code]]
   permitted = permitted_attributes.join(', ')
 
   it "should permit: #{permitted}" do
@@ -34,16 +34,34 @@ describe FlashcardsController do
 
   describe "POST #create" do
     context "with valid attributes" do
+      
+      let(:valid_attributes) { {content: "42", result: "44", answers_attributes: [{correct: false, code: "42+2"}]} }
+
       it "creates a new Flashcard object" do
-        expect {
-          post :create, flashcard: FactoryGirl.attributes_for(:flashcard)
-        }.to change(Flashcard, :count).by(1)
+        post :create, flashcard: valid_attributes 
+        assigns(:flashcard).should be_a(Flashcard)
+        assigns(:flashcard).should be_persisted
       end
+
+
       it "creates a new Answer object" do
+        # binding.pry
         expect {
-          post :create, flashcard: FactoryGirl.attributes_for(:flashcard)
+          post :create, flashcard: {content: "42", result: "44", answers_attributes: [{correct: false, code: "42+2"}]}
         }.to change(Answer, :count).by(1)
+
       end
+    end
+  end
+
+  describe "GET #new" do 
+    it "prepares a new flashcard" do
+      get :new, {}
+      assigns(:flashcard).should be_a_new(Flashcard)
+    end
+
+    it "prepares a new Answer object" do
+      # expect { get :new, {} }.to change(Answer)
     end
   end
 

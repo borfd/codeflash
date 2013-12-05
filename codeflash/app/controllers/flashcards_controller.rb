@@ -25,7 +25,7 @@ class FlashcardsController < ApplicationController
   # POST /flashcards.json
   def create
     @flashcard = Flashcard.new(flashcard_params)
-
+    
     respond_to do |format|
       if @flashcard.save
         format.html { redirect_to @flashcard, notice: 'Flashcard was successfully created.' }
@@ -69,6 +69,6 @@ class FlashcardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flashcard_params
-      params.require(:flashcard).permit(:content, :result, answers_attributes: [:code])
+      params.require(:flashcard).permit(:content, :result, answers_attributes: [:correct, :code])
     end
 end
