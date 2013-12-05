@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 describe "routes for Flashcards" do
 	it "routes /flashcards to flashcards controller" do
