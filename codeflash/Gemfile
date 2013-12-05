@@ -45,6 +45,8 @@ end
 
 group :test do
 	gem 'shoulda-matchers'
+  gem 'factory_girl'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development, :test do
@@ -54,6 +56,7 @@ end
 group :development do
   gem 'guard'
   gem 'guard-rspec'
+  gem 'pry'
 end
 
 platform :jruby do

@@ -1,7 +1,7 @@
 module NinjaSandbox
 
 	module RunnableAnswer	
-		def verify(queue)
+		def enqueue_verification(queue)
 			queue.enqueue("NinjaSandbox::AnswerVerifier.run",
 				 self.id,
 				 self.code,

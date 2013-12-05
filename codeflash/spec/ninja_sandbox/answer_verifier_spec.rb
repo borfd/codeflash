@@ -5,6 +5,9 @@ describe NinjaSandbox::AnswerVerifier do
 	before(:each) do
 		@answer = FakeAnswer.new
 	end
+
+	
+	
 	it "should verify correct answer" do
 		NinjaSandbox::AnswerVerifier.stub(:find)
 			.with(@answer.id)

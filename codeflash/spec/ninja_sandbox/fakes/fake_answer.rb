@@ -8,4 +8,6 @@ class FakeAnswer
 	def result; 10; end
 	def save; true; end
 	def correct=(_); true; end
+	def correct; true; end
+	def run_verification(_); true; end;
 end
