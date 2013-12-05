@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FlashcardController do
+describe FlashcardsController do
 
 	describe "GET #index" do 
 		it "fills an array of flashcards" do
