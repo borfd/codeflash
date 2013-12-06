@@ -1,3 +1,3 @@
-Ember.FlashcardsRoute = Ember.Route.extend 
+App.FlashcardsRoute = Ember.Route.extend 
 	model: ->
 		App.Flashcard.find()
