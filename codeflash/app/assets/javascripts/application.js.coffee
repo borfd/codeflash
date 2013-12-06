@@ -3,8 +3,8 @@
 #= require ember
 #= require ember-data
 #= require_self
-#= require app
+#= require codeflash
 
 # for more details see: http://emberjs.com/guides/application/
-window.App = Ember.Application.create()
+window.Codeflash = Ember.Application.create()
 

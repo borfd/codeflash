@@ -1,3 +1,3 @@
-App.FlashcardsRoute = Ember.Route.extend 
+Codeflash.FlashcardsRoute = Ember.Route.extend 
 	model: ->
-		App.Flashcard.find()
+		@store.findAll('flashcard')

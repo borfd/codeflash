@@ -1,10 +1,11 @@
 class FlashcardsController < ApplicationController
   before_action :set_flashcard, only: [:show, :edit, :update, :destroy]
-
+  respond_to :json
   # GET /flashcards
   # GET /flashcards.json
   def index
     @flashcards = Flashcard.all
+    render json: @flashcards
   end
 
   # GET /flashcards/1

@@ -1,4 +1,5 @@
 class FlashcardSerializer < ActiveModel::Serializer
-  attributes :id, :content
-  has_many :answers
+  embed :ids, include: true
+  attributes :id, :content, :result
+  has_many :answers, key: :answers, root: :answers, embed: :objects
 end
