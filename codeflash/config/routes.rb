@@ -1,8 +1,7 @@
 Codeflash::Application.routes.draw do
   root 'home#index'
-  resources :flashcards do
-    resources :answers
-  end
+  resources :flashcards
+  resources :answers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

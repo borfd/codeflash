@@ -1,3 +1,11 @@
-Hello World!
-
-{{ outlet }}
+<div id="flashcards-list">
+	<h3>Flashcards</h3>
+	<ul>
+	{{#each}}
+		<li>{{#link-to 'flashcard' this }}
+			{{content}}	
+		{{/link-to}}</li>
+	{{/each}}
+	</ul>
+	{{outlet}}
+</div>

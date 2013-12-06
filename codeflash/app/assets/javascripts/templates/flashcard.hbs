@@ -1,0 +1,12 @@
+<h3>Answers</h3>
+{{#each answers}}
+	<div>
+			{{code}}
+	</div>
+{{/each}}
+{{#with new_answer}}
+	{{input value=code}}
+	<button {{action save}}>save</button>
+{{/with}}
+
+{{ outlet }}

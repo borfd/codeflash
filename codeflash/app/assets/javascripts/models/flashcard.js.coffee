@@ -1,4 +1,4 @@
 Codeflash.Flashcard = DS.Model.extend
 	content: DS.attr('string')
 	result: DS.attr('string')
-	answers: DS.hasMany('answer')
+	answers: DS.hasMany('answer', {async: true, embedded: true})
