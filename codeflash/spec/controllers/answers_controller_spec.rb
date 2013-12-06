@@ -15,7 +15,10 @@ describe AnswersController do
 
 		it "returns json representation of all answers" do
 			body = JSON.parse(response.body)
-			body["id"] == @flashcard.id
+			body["answers"].each do |a|
+				# binding.pry
+				a["answers"]["id"].should be_in(@answers.pluck(:id))
+			end
 		end
 	end
 end
