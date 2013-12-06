@@ -2,11 +2,20 @@ require 'spec_helper'
 
 describe AnswersController do
 	describe "GET #index" do
+
+		before(:each) do
+			@flashcard = FactoryGirl.create :flashcard_with_answers
+			@answers = @flashcard.answers
+			get :index, flashcard_id: @flashcard.id
+		end
+
 		it "fills an array of answers" do
-			flashcard = FactoryGirl.create(:flashcard_with_answers)
-			answer = flashcard.answers.first
-			get :index, flashcard_id: answer.flashcard_id
-			assigns(:answers).should eq([answer])
+			assigns(:answers).should eq(@answers)
+		end
+
+		it "returns json representation of all answers" do
+			body = JSON.parse(response.body)
+			body["id"] == @flashcard.id
 		end
 	end
 end

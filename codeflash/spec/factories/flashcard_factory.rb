@@ -15,7 +15,7 @@ FactoryGirl.define do
 	
 		factory :flashcard_with_answers do
 			after(:create) do |f| 
-				FactoryGirl.create(:answer, :flashcard => f)
+				FactoryGirl.create_list(:answer, 5, :flashcard => f)
 			end
 		end
 
