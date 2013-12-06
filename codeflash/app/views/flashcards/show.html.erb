@@ -1,4 +1,18 @@
 <p id="notice"><%= notice %></p>
+<div>
+	<%= @flashcard.content %>
+</div>
+
+<div>
+	<%= @flashcard.result %>
+</div>
+
+<% unless @flashcard.answers.empty? %>
+	<% @flashcard.answers.each do |answer| %>
+		<%= answer.code %>
+		<%= 'verified' if answer.correct %>
+	<% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_flashcard_path(@flashcard) %> |
 <%= link_to 'Back', flashcards_path %>

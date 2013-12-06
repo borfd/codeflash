@@ -68,3 +68,8 @@ platform :ruby do
 end
 
 gem 'puma'
+gem "active_model_serializers"
+gem 'coffee-rails', '~> 4.0.0'
+# gem 'handlebars'
+gem 'ember-rails'
+gem 'ember-source'

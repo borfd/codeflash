@@ -15,6 +15,7 @@ class FlashcardsController < ApplicationController
   # GET /flashcards/new
   def new
     @flashcard = Flashcard.new
+    @flashcard.answers.build
   end
 
   # GET /flashcards/1/edit
@@ -25,7 +26,7 @@ class FlashcardsController < ApplicationController
   # POST /flashcards.json
   def create
     @flashcard = Flashcard.new(flashcard_params)
-    
+
     respond_to do |format|
       if @flashcard.save
         format.html { redirect_to @flashcard, notice: 'Flashcard was successfully created.' }

@@ -13,11 +13,11 @@ FactoryGirl.define do
 		result "44"
 		content "44"
 	
-		factory :flashcard_with_answers, :parent => :flashcard do |flashcard|
-			flashcard.after_create { |f| FactoryGirl.build(:answer, :flashcard => f)}
+		factory :flashcard_with_answers do
+			after(:create) do |f| 
+				FactoryGirl.create(:answer, :flashcard => f)
+			end
 		end
-
-	
 
 	end
 	

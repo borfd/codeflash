@@ -2,18 +2,28 @@ require 'spec_helper'
 
 describe FlashcardsController do
 
-  permitted_attributes = [:content, :result, answers_attributes: [:correct, :code]]
+  permitted_attributes = [:content, :result, 
+    answers_attributes: [:correct, :code]]
   permitted = permitted_attributes.join(', ')
 
   it "should permit: #{permitted}" do
-    controller.params = {flashcard: FactoryGirl.attributes_for(:flashcard) }
-    controller.params.require(:flashcard).should_receive(:permit).with(*permitted_attributes)
+    controller.params = {
+      flashcard: FactoryGirl.attributes_for(:flashcard) 
+    }
+    controller.params.require(:flashcard)
+      .should_receive(:permit).with(*permitted_attributes)
     controller.send :flashcard_params
   end
 
   describe "GET #index" do 
     it "fills an array of flashcards" do
-      flashcard = Flashcard.create FactoryGirl.attributes_for(:flashcard)
+      flashcard = FactoryGirl.create(:flashcard) 
+      get :index
+      assigns(:flashcards).should eq([flashcard])
+    end
+
+    it "fills an array of flashcards and answers" do
+      flashcard = FactoryGirl.create(:flashcard_with_answers) 
       get :index
       assigns(:flashcards).should eq([flashcard])
     end
@@ -26,7 +36,8 @@ describe FlashcardsController do
 
   describe "GET #show" do
     it "assigns the requested flashcard" do
-      flashcard = Flashcard.create FactoryGirl.attributes_for(:flashcard)
+      flashcard = FactoryGirl.create(:flashcard)
+      # flashcard = Flashcard.create FactoryGirl.attributes_for(:flashcard)
       get :show, id: flashcard
       assigns(:flashcard).should eq(flashcard)
     end
