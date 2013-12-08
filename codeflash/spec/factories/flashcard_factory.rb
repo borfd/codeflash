@@ -11,7 +11,7 @@ FactoryGirl.define do
 
 	factory :flashcard do
 		result "44"
-		content "44"
+		description "44"
 	
 		factory :flashcard_with_answers do
 			after(:create) do |f| 

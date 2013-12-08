@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FlashcardsController do
 
-  permitted_attributes = [:content, :result, 
+  permitted_attributes = [:description, :result, 
     answers_attributes: [:correct, :code]]
   permitted = permitted_attributes.join(', ')
 
@@ -28,10 +28,6 @@ describe FlashcardsController do
       assigns(:flashcards).should eq([flashcard])
     end
 
-    it "renders the index view" do
-      get :index
-      response.should render_template(:index)
-    end
   end
 
   describe "GET #show" do
@@ -46,7 +42,7 @@ describe FlashcardsController do
   describe "POST #create" do
     context "with valid attributes" do
       
-      let(:valid_attributes) { {content: "42", result: "44", answers_attributes: [{correct: false, code: "42+2"}]} }
+      let(:valid_attributes) { {description: "42", result: "44", answers_attributes: [{correct: false, code: "42+2"}]} }
 
       it "creates a new Flashcard object" do
         post :create, flashcard: valid_attributes 
@@ -58,7 +54,7 @@ describe FlashcardsController do
       it "creates a new Answer object" do
         # binding.pry
         expect {
-          post :create, flashcard: {content: "42", result: "44", answers_attributes: [{correct: false, code: "42+2"}]}
+          post :create, flashcard: {description: "42", result: "44", answers_attributes: [{correct: false, code: "42+2"}]}
         }.to change(Answer, :count).by(1)
 
       end

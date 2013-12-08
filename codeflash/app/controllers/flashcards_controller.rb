@@ -71,6 +71,6 @@ class FlashcardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flashcard_params
-      params.require(:flashcard).permit(:content, :result, answers_attributes: [:correct, :code])
+      params.require(:flashcard).permit(:description, :result, answers_attributes: [:correct, :code])
     end
 end
