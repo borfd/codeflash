@@ -7,4 +7,3 @@
 
 # for more details see: http://emberjs.com/guides/application/
 window.Codeflash = Ember.Application.create()
-

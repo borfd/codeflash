@@ -1,11 +1,22 @@
-<div id="flashcards-list">
-	<h3>Flashcards</h3>
-	<ul>
-	{{#each}}
-		<li>{{#link-to 'flashcard' this }}
-			{{content}}	
-		{{/link-to}}</li>
-	{{/each}}
-	</ul>
-	{{outlet}}
+<div class="row">
+	<div class="large-3 columns">
+		<div class="sidebar">
+			<h3>Flashcards</h3>
+			<ul class="side-nav">
+			{{#each}}
+				<li>{{#link-to 'flashcard' this }}
+					{{content}}	
+				{{/link-to}}</li>
+			{{/each}}
+				<li class="divider"></li>
+				<li>
+					{{#link-to 'flashcards.create'}}new{{/link-to}}
+				</li>
+
+			</ul>
+		</div>
+	</div>
+	<div class="large-9 columns">
+		{{outlet}}
+	</div>
 </div>
