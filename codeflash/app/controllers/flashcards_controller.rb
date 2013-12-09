@@ -11,6 +11,7 @@ class FlashcardsController < ApplicationController
   # GET /flashcards/1
   # GET /flashcards/1.json
   def show
+    render json: @flashcard
   end
 
   # GET /flashcards/new
@@ -28,15 +29,12 @@ class FlashcardsController < ApplicationController
   def create
     @flashcard = Flashcard.new(flashcard_params)
 
-    respond_to do |format|
-      if @flashcard.save
-        format.html { redirect_to @flashcard, notice: 'Flashcard was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @flashcard }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @flashcard.errors, status: :unprocessable_entity }
-      end
+    if @flashcard.save
+      render json: @flashcard
+    else
+      render json: @flashcard.errors, status: :unprocessable_entity
     end
+
   end
 
   # PATCH/PUT /flashcards/1

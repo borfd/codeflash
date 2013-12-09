@@ -4,5 +4,5 @@ Codeflash.FlashcardsCreateController = Ember.ObjectController.extend
 	actions:
 		save: ->
 			newFlashcard = @store.createRecord 'flashcard', @get('model')
-			console.log newFlashcard
-			console.log @get('flashcards')
+			newFlashcard.save().then (card) =>
+				@transitionToRoute('flashcard', card)
