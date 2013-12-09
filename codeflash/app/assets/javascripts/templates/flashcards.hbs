@@ -13,9 +13,11 @@
 				<li class="divider"></li>
 				<h4>Unsolved</h4>
 			{{#each unsolvedCards}}
-				{{#link-to 'flashcard' this.id }}
-					{{description}}
-				{{/link-to}}
+				<li>
+					{{#link-to 'flashcard' this.id }}
+						{{description}}
+					{{/link-to}}
+				</li>
 			{{/each}}
 				<li class="divider"></li>
 				<li>
