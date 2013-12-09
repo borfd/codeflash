@@ -1,16 +1,27 @@
 <div class="row">
 	<div class="large-3 columns">
 		<div class="sidebar">
-			<h3>Flashcards</h3>
+			<h3>Problems</h3>
 			<ul class="side-nav">
 			{{#each}}
-				<li>{{#link-to 'flashcard' this.id }}
-					{{description}}	
-				{{/link-to}}</li>
+				<li>
+					{{#link-to 'flashcard' this.id }}
+						{{description}}	
+					{{/link-to}}
+				</li>
+			{{/each}}
+				<li class="divider"></li>
+				<h4>Unsolved</h4>
+			{{#each unsolvedCards}}
+				{{#link-to 'flashcard' this.id }}
+					{{description}}
+				{{/link-to}}
 			{{/each}}
 				<li class="divider"></li>
 				<li>
-					{{#link-to 'flashcards.create'}}new{{/link-to}}
+					{{#link-to 'flashcards.create'}}
+						new
+					{{/link-to}}
 				</li>
 
 			</ul>

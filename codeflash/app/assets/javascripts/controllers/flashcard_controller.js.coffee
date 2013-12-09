@@ -7,4 +7,4 @@ Codeflash.FlashcardController = Ember.ObjectController.extend
 			@get('model').get('answers').pushObject(answer)
 			answer.save()
 
-	new_answer: Em.Object.create(code: "Enter your code here: ")
+	new_answer: Em.Object.create()

@@ -1,11 +1,12 @@
-<h3>{{description}} == {{result}}</h3>
+<h3>{{description}}</h3>
+<h4>== {{result}}</h4>
 {{#each answers}}
 	<div>
 			{{code}}
 	</div>
 {{/each}}
 {{#with new_answer}}
-	{{input value=code}}
+	{{input value=code placeholder="Your solution"}}
 	<button {{action save}}>save</button>
 {{/with}}
 
