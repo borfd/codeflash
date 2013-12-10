@@ -1,5 +1,7 @@
 Codeflash::Application.routes.draw do
   root 'home#index'
   resources :flashcards
-  resources :answers
+  resources :answers do
+  	get 'verify'
+  end
 end
