@@ -11,4 +11,11 @@ describe Answer do
   	subject.should_not_receive(:save)
   	subject.verify(true)
   end
+
+  it "should call save when verifying with a true arg" do
+    subject.stub(:correct).and_return(false)
+    subject.stub(:save)
+    subject.should_receive(:save)
+    subject.verify(true)
+  end
 end

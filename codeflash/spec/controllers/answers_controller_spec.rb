@@ -25,9 +25,9 @@ describe AnswersController do
 		before(:each) do
 			@answer = FactoryGirl.create :answer
 		end
-		it "should enqueue_verification on this answer object" do
+		xit "should run_verification on this answer object" do
 			get :verify, answer_id: @answer.id
-			expect(@answer).to  receive(:run_verification).once
+			expect(AnswerVerifierWorker).to receive(:perform).with(@answer)
 		end
 	end
 end

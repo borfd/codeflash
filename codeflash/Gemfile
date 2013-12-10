@@ -75,3 +75,5 @@ gem 'ember-rails'
 gem 'ember-source'
 gem 'foundation-rails'
 gem 'coderay'
+gem "sidekiq"
+gem 'sinatra'

@@ -1,3 +1,5 @@
+require "ninja_sandbox/answer_verifier"
+
 class AnswersController < ApplicationController
 	respond_to :json
 	before_action :set_answer, only: [:show]
@@ -12,8 +14,16 @@ class AnswersController < ApplicationController
 	end
 
 	def show
-
+		render json: @answer
 	end
+
+	def verify
+		answer = Answer.find(params[:answer_id])
+		#NinjaSandbox::AnswerVerifier.run answer.id
+		AnswerVerifierWorker.perform_async answer.id
+		render json: answer
+	end
+
 	private
     # Use callbacks to share common setup or constraints between actions.
     def set_answer

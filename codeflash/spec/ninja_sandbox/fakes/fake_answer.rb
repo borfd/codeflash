@@ -5,7 +5,7 @@ class FakeAnswer
 		 	result + element
 		 end"
 	end
-	def result; 10; end
+	def expected; 10; end
 	def save; true; end
 	def correct=(_); true; end
 	def correct; true; end

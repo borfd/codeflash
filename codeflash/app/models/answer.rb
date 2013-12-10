@@ -7,11 +7,17 @@ class Answer < ActiveRecord::Base
 
 	validates_presence_of :code
 
+
+	def expected
+		flashcard.result
+	end
+
 	def verify(result)
 		unless self.correct == result
-			@correct = result
+			self.correct = result
 			self.save()
 		end
+		self.correct
 	end
 
 end
