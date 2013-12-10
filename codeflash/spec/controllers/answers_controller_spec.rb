@@ -20,4 +20,14 @@ describe AnswersController do
 			end
 		end
 	end
+
+	describe "GET #verify" do
+		before(:each) do
+			@answer = FactoryGirl.create :answer
+		end
+		it "should enqueue_verification on this answer object" do
+			get :verify, answer_id: @answer.id
+			expect(@answer).to  receive(:run_verification).once
+		end
+	end
 end
