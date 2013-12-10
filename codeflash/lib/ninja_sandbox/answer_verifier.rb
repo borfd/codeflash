@@ -10,7 +10,7 @@ module NinjaSandbox
 		
 			playground = Sandbox::Safe.new
 			answer = find(id)
-			answer.run_verification(playground.eval(code) == expected)
+			answer.verify(playground.eval(code) == expected)
 
 		end
 	end

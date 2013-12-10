@@ -1,6 +1,5 @@
 module NinjaSandbox
-
-	module RunnableAnswer	
+	module RunnableAnswer
 		def enqueue_verification(queue)
 			queue.enqueue("NinjaSandbox::AnswerVerifier.run",
 				 self.id,
@@ -9,5 +8,4 @@ module NinjaSandbox
 			)
 		end
 	end
-
 end

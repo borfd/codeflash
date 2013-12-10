@@ -2,6 +2,7 @@
 	<div class="large-3 columns">
 		<div class="sidebar">
 			<h3>Problems</h3>
+			<h4>All</h4>
 			<ul class="side-nav">
 			{{#each}}
 				<li>
@@ -11,21 +12,22 @@
 				</li>
 			{{/each}}
 				<li class="divider"></li>
-				<h4>Unsolved</h4>
-			{{#each unsolvedCards}}
+			</ul>
+			<h4>Unsolved</h4>
+			<ul class="side-nav">
+				{{#each unsolvedCards}}
 				<li>
 					{{#link-to 'flashcard' this.id }}
 						{{description}}
 					{{/link-to}}
 				</li>
-			{{/each}}
+				{{/each}}
 				<li class="divider"></li>
 				<li>
 					{{#link-to 'flashcards.create'}}
 						new
 					{{/link-to}}
 				</li>
-
 			</ul>
 		</div>
 	</div>

@@ -40,15 +40,7 @@ class FlashcardsController < ApplicationController
   # PATCH/PUT /flashcards/1
   # PATCH/PUT /flashcards/1.json
   def update
-    respond_to do |format|
-      if @flashcard.update(flashcard_params)
-        format.html { redirect_to @flashcard, notice: 'Flashcard was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @flashcard.errors, status: :unprocessable_entity }
-      end
-    end
+    render json: Flashcard.find(params[:id]).tap { |card| card.update_attributes(flashcard_params) }
   end
 
   # DELETE /flashcards/1
