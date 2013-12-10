@@ -1,3 +1,21 @@
 // Place all the styles related to the Flashcard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.correct, .wrong {
+	background-color: darken(#fff, 5%);
+	margin-bottom: 1em;
+    padding: rem-calc(20);
+    p {
+    	padding-left: 2%;
+    	padding-top: 2.5%
+    }
+}
+
+.correct {
+	border: 1px solid green;
+}
+
+.wrong {
+	border: 1px solid red;
+}

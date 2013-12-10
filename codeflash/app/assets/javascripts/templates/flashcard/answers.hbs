@@ -1,6 +1,8 @@
 answers
 <div id="answers-list">
 	{{#each}}
-		{{code}}
+		<div {{bind-attr class="verified"}}>
+			{{code}}
+		</div>
 	{{/each}}
 </div>

@@ -19,7 +19,6 @@ class AnswersController < ApplicationController
 
 	def verify
 		answer = Answer.find(params[:answer_id])
-		#NinjaSandbox::AnswerVerifier.run answer.id
 		AnswerVerifierWorker.perform_async answer.id
 		render json: answer
 	end

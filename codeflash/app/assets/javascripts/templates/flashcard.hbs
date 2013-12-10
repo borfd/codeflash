@@ -1,7 +1,7 @@
 <h2>{{description}}</h2>
 <h2>&#8618;{{result}}</h2>
 {{#each answers}}
-	<div class="panel">
+	<div {{bind-attr class="correct:correct:wrong"}}>
 			<p>{{code}}</p>
 	</div>
 {{/each}}
