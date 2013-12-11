@@ -2,7 +2,8 @@
 <h2>&#8618;{{result}}</h2>
 {{#each answers}}
 	<div {{bind-attr class="correct:correct:wrong"}}>
-			<p>{{code}}</p>
+			<p>{{code}} <button {{action destroy this}}>X</button></p>
+
 	</div>
 {{/each}}
 <form id="new-answer">

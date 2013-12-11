@@ -10,5 +10,13 @@ describe AnswersController do
 			action: "verify"
 		)
 	end
+
+	it "routes to #destroy" do
+		delete('/answers/1').should route_to(
+			controller: "answers",
+			id: "1",
+			action: "destroy",
+		)
+	end
 	
 end

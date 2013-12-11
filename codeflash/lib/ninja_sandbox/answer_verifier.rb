@@ -11,7 +11,7 @@ module NinjaSandbox
 			rescue Sandbox::SandboxException
 				answer.verify false
 			end
-			answer
+			answer.correct
 		end
 
 	end

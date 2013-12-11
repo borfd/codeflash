@@ -30,4 +30,17 @@ describe AnswersController do
 			expect(AnswerVerifierWorker).to receive(:perform).with(@answer)
 		end
 	end
+
+	describe "DELETE #destroy" do
+		before(:each) do
+			@answer = FactoryGirl.create :answer
+		end
+
+		it "should delete the answer" do
+			expect {
+				delete :destroy, id: @answer.id
+			}.to change(Answer, :count).by(-1)
+		end
+
+	end
 end

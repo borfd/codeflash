@@ -24,6 +24,12 @@ class AnswersController < ApplicationController
 		render json: answer
 	end
 
+	def destroy
+		answer = Answer.find(params[:id])
+		answer.destroy
+		head :no_content
+	end
+
 	private
     # Use callbacks to share common setup or constraints between actions.
     def set_answer
