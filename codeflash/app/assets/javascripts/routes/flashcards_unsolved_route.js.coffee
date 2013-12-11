@@ -1,5 +1,4 @@
 Codeflash.FlashcardsUnsolvedRoute = Ember.Route.extend
 	setupController: ->
-		flashcards = @store.filter 'flashcard', (card) ->
-			not card.get('isSolved')
+		flashcards = @modelFor('flashcards').filterProperty 'isSolved', false
 		@controllerFor('flashcards').set 'filteredFlashcards', flashcards

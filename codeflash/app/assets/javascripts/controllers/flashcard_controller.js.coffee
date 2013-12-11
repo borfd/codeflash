@@ -1,4 +1,5 @@
 Codeflash.FlashcardController = Ember.ObjectController.extend
+	needs: 'flashcards'
 	actions: 
 		save: ->	
 			answer = @store.createRecord 'answer', @get('new_answer')
@@ -8,7 +9,8 @@ Codeflash.FlashcardController = Ember.ObjectController.extend
 			answer.save().then ->
 				answer.verify()
 		destroy: (m) ->
-			@store.deleteRecord m
+			@get('model.answers').removeObject(m)
+			m.deleteRecord()
 
 
 	new_answer: Em.Object.create()
