@@ -4,11 +4,11 @@
 			<h3>Problems</h3>
 			<ul class="button-group radius round">
 				<li>
-					{{#link-to "flashcards.index" activeClass="selected" classNames="tiny button"}}ALL{{/link-to}}
+					<a class="tiny button" {{action disableFilter}}>ALL</a>
 				</li>
 
 				<li>
-					{{#link-to "flashcards.unsolved" activeClass="selected" classNames="tiny button"}}UNSOLVED{{/link-to}}
+					<a class="tiny button" {{action enableFilter}}>UNSOLVED</a>
 				</li>
 			</ul>
 			<ul class="side-nav">

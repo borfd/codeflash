@@ -1,4 +1,4 @@
-Codeflash.FlashcardsIndexRoute = Ember.Route.extend
-	setupController: ->
-		@controllerFor('flashcards').set 'filteredFlashcards', @modelFor('flashcards')
+#Codeflash.FlashcardsIndexRoute = Ember.Route.extend
+#	setupController: ->
+#		@controllerFor('flashcards').set 'filteredFlashcards', @modelFor('flashcards')
 		
