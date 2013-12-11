@@ -21,7 +21,7 @@ describe NinjaSandbox::AnswerVerifier do
 		Answer.stub(:find)
 			.with(@answer.id)
 			.and_return(@answer)
-		NinjaSandbox::AnswerVerifier.run(@answer.id).should be_false
+		NinjaSandbox::AnswerVerifier.run(@answer.id).should eq(@answer)
 		@answer.correct.should be_false
 	end
   
