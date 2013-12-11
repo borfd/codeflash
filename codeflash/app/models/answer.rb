@@ -5,7 +5,7 @@ class Answer < ActiveRecord::Base
 
 	belongs_to :flashcard
 
-	validates_presence_of :code
+	validates_presence_of :code, allow_blank: false
 
 
 	def expected

@@ -77,3 +77,4 @@ gem 'foundation-rails'
 gem 'coderay'
 gem "sidekiq"
 gem 'sinatra'
+gem 'pusher'

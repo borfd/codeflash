@@ -5,10 +5,12 @@
 			<p>{{code}}</p>
 	</div>
 {{/each}}
+<form id="new-answer">
 {{#with new_answer}}
 	{{input value=code placeholder="Your solution"}}
-	<button {{action save}}>save</button>
+	<button {{action save}}>add</button>
 {{/with}}
+</form>
 
 {{#link-to 'flashcard.edit'}}edit this story {{/link-to}}
 
