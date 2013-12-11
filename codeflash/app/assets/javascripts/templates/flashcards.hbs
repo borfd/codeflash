@@ -2,26 +2,23 @@
 	<div class="large-3 columns">
 		<div class="sidebar">
 			<h3>Problems</h3>
-			<h4>All</h4>
+			<ul class="button-group radius round">
+				<li>
+					{{#link-to "flashcards.index" activeClass="selected" classNames="tiny button"}}ALL{{/link-to}}
+				</li>
+
+				<li>
+					{{#link-to "flashcards.unsolved" activeClass="selected" classNames="tiny button"}}UNSOLVED{{/link-to}}
+				</li>
+			</ul>
 			<ul class="side-nav">
-			{{#each}}
+			{{#each filteredFlashcards}}
 				<li>
 					{{#link-to 'flashcard' this.id }}
 						{{description}}	
 					{{/link-to}}
 				</li>
 			{{/each}}
-				<li class="divider"></li>
-			</ul>
-			<h4>Unsolved</h4>
-			<ul class="side-nav">
-				{{#each unsolvedCards}}
-				<li>
-					{{#link-to 'flashcard' this.id }}
-						{{description}}
-					{{/link-to}}
-				</li>
-				{{/each}}
 				<li class="divider"></li>
 				<li>
 					{{#link-to 'flashcards.create'}}
