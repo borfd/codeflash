@@ -8,3 +8,6 @@
 #= require_tree ./routes
 #= require ./router
 #= require_self
+
+Codeflash.Pusher.reopen
+	key: "26989071e21344c8fdc0"

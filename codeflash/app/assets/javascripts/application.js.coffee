@@ -4,6 +4,10 @@
 #= require ember-data
 #= require_self
 #= require codeflash
+#= require_tree ../../../vendor/assets/javascripts/.
 
-# for more details see: http://emberjs.com/guides/application/
-window.Codeflash = Ember.Application.create()
+window.Codeflash = Ember.Application.create
+	ready: ->
+		@register "pusher:main", Codeflash.Pusher, 
+			singleton: true
+		@inject('controller', 'pusher', 'pusher:main')
