@@ -5,7 +5,6 @@ Codeflash.Router.map ->
 	  @route 'create'
 	  @resource 'flashcard', { path: ':flashcard_id' }, ->
 	  	@route 'edit'
-			@resource 'answers'
 
   @resource 'answers', path: '/answers', ->
   	@route 'create'

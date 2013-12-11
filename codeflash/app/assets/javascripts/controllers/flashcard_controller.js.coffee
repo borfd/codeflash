@@ -5,6 +5,7 @@ Codeflash.FlashcardController = Ember.ObjectController.extend
 			# Sandi says NO!
 			# Move into AnswersController
 			@get('model').get('answers').pushObject(answer)
-			answer.save()
+			answer.save().then ->
+				answer.verify()
 
 	new_answer: Em.Object.create()
