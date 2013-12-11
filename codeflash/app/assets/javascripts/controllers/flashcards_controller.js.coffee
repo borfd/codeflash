@@ -14,3 +14,7 @@ Codeflash.FlashcardsController = Ember.ArrayController.extend
 			return @filterProperty 'isSolved', false if @get('filtering')
 			return @get('model') unless @get('filtering')
 	).property('@each.isSolved', 'filtering')
+
+	unsolvedRemaining: (->
+		@filterProperty('isSolved', false).get('length')
+	).property('@each.isSolved')
