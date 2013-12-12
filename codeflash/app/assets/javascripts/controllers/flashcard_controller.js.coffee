@@ -8,6 +8,7 @@ Codeflash.FlashcardController = Ember.ObjectController.extend
 			@get('model').get('answers').pushObject(answer)
 			answer.save().then ->
 				answer.verify()
+			@set('new_answer', Em.Object.create())
 		destroy: (m) ->
 			@get('model.answers').removeObject(m)
 			m.deleteRecord()

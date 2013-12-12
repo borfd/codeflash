@@ -10,6 +10,6 @@ class AnswerVerifierWorker
 	def perform(id)
 		result = NinjaSandbox::AnswerVerifier.run(id)
 		answer = AnswerSerializer.new(result)
-		Pusher["answers"].trigger('verified', answer.to_json)
+		Pusher["answers"].trigger('verified', answer.as_json)
 	end
 end
