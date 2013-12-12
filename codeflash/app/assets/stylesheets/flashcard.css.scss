@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.flashcard-actions {
+	margin-top: 10px;
+	float: right;
+}
+
 .correct, .wrong {
 	margin-bottom: 1em;
     padding: rem-calc(20);
@@ -11,9 +16,12 @@
     }
 }
 
+.correct { color: green; }
+.wrong { color: red; }
+
 .flashcard {
 	padding-top: 2%;
-	padding-bottom: 1%;
+	padding-bottom: 2%;
 	border: 1px solid #ccc;
 	.code {
 		font-size: 1.4em;
@@ -22,5 +30,9 @@
 			font-family: inherit;
 			font-weight: 300;
 		}
+	}
+	i {
+		font-size: 1.4em;	
+		padding-right: 0.5em;
 	}
 }

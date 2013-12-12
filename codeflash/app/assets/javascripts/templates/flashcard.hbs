@@ -1,9 +1,12 @@
-<h4>
-	<button {{action 'destroy'}} class="label radius alert right">X</button>
-	{{#link-to 'flashcard.edit' classNames="label radius secondary right"}}edit{{/link-to}}
+<h3>
+	<div class="flashcard-actions">
+		<button {{action 'destroy'}} class="label radius alert right">X</button>
+		{{#link-to 'flashcard.edit' classNames="label radius secondary right"}}edit{{/link-to}}
+	</div>	
 	{{description}} 
 	<small>&#8618;{{result}}</small>
-</h4>
+
+</h3>
 {{#each a in answers}}
 	<div {{bind-attr class="a.correct:correct:wrong"}}>
 			<div class="row flashcard">
@@ -12,9 +15,7 @@
 				</div>
 				<div class="large-2 columns">
 					<button class="radius secondary label right" {{action destroy a}}>X</button>
-				</div>
-				<div class="large-12 columns">
-					<i {{bind-attr class="a.imageClass"}}></i>
+					<i {{bind-attr class="a.imageClass" classNames="right"}}></i>
 				</div>
 			</div>
 
@@ -22,7 +23,7 @@
 {{/each}}
 <form id="new-answer">
 {{#with new_answer}}
-	{{textarea value=code placeholder="Your solution"}}
+	{{view Ember.TextArea valueBinding=code rows="12" cols="70"}}
 	<button {{action save}} class="secondary radius">add</button>
 {{/with}}
 </form>

@@ -15,6 +15,6 @@ Codeflash.Answer = DS.Model.extend
 		if @get('correct')
 			return "fa fa-check-square-o right"
 		else
-			return "fa fa-thumbs-down right"
+			return "fa fa-exclamation-triangle right"
 	).property('correct')
 		
