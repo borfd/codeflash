@@ -10,4 +10,11 @@ Codeflash.Answer = DS.Model.extend
 			url: '/answers/' + @id + '/verify'
 			type: "GET"
 			success: (data, status, xhr) ->
+
+	imageClass: (->
+		if @get('correct')
+			return "fa fa-check-square-o right"
+		else
+			return "fa fa-thumbs-down right"
+	).property('correct')
 		

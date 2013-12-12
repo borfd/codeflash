@@ -11,10 +11,16 @@
     }
 }
 
-.correct {
-	border: 1px solid green;
-}
-
-.wrong {
-	border: 1px solid red;
+.flashcard {
+	padding-top: 2%;
+	padding-bottom: 1%;
+	border: 1px solid #ccc;
+	.code {
+		font-size: 1.4em;
+		pre {
+			padding-left: 1%;
+			font-family: inherit;
+			font-weight: 300;
+		}
+	}
 }
