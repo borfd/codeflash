@@ -13,8 +13,8 @@ Codeflash.Answer = DS.Model.extend
 
 	imageClass: (->
 		if @get('correct')
-			return "fa fa-check-square-o right"
+			return "fa fa-check-square-o right green"
 		else
-			return "fa fa-exclamation-triangle right"
+			return "fa fa-exclamation-triangle right red"
 	).property('correct')
 		

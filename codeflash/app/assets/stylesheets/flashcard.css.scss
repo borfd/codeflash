@@ -20,6 +20,7 @@
 .wrong { color: red; }
 
 .flashcard {
+	margin-bottom: 2% !important;
 	padding-top: 2%;
 	padding-bottom: 2%;
 	border: 1px solid #ccc;
@@ -31,6 +32,8 @@
 			font-weight: 300;
 		}
 	}
+	.red { color: red; }
+	.green { color: green; }
 	i {
 		font-size: 1.4em;	
 		padding-right: 0.5em;

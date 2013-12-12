@@ -13,3 +13,4 @@
  *= require_tree .
  */
 
+.row {min-width:100% !important;}
