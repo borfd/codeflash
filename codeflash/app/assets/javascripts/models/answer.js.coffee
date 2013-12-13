@@ -4,6 +4,7 @@ Codeflash.Answer = DS.Model.extend
 	date_added: DS.attr('date')
 	correct: DS.attr('boolean')
 	raycode: DS.attr('string')
+	result: DS.attr('string')
 
 	verify: ->
 		$.ajax
