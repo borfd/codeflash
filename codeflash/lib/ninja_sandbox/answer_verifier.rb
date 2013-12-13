@@ -7,10 +7,11 @@ module NinjaSandbox
 			playground = Sandbox::Safe.new
 			answer = Answer.find(id)
 			begin
-				answer.verify(playground.eval(answer.code).to_s == answer.expected)
-			rescue Sandbox::SandboxException
-				answer.verify false
+				eval_result = playground.eval(answer.code).to_s
+			rescue Sandbox::SandboxException => ex
+				eval_result = ex.message
 			end
+			answer.verify eval_result
 			answer
 		end
 

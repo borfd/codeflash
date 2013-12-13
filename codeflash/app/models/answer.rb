@@ -9,19 +9,21 @@ class Answer < ActiveRecord::Base
 
 
 	def expected
-		self.flashcard.result unless self.flashcard.nil?
+		self.flashcard.result
 	end
 
-	def verify(result)
-		unless self.correct == result
-			self.correct = result
-			self.save()
-		end
+	def verify(result)	
+		self.correct = validate_result(result)		
+		self.result = result
+		self.save()	
 		self.correct
 	end
 
 	def raycode
 		CodeRay.scan(self.code, :ruby).div(line_numers: :table)
 	end
-
+	private 
+		def validate_result(result)
+			result == expected
+		end
 end

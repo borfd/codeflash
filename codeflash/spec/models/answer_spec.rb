@@ -1,21 +1,30 @@
 require 'spec_helper'
 
 describe Answer do
+
+  subject { 
+    answer = FactoryGirl.create(:answer)
+    answer.stub(:save)
+    answer
+  }
+
 	it { should belong_to(:flashcard) }
   it { should respond_to(:verify) }
   it { should validate_presence_of(:code) } 
-  #it { should accept_mass_assignment_of(:answers) }
-  it "should call save only when different" do
-  	subject.stub(:correct).and_return(true)
-  	subject.stub(:save)
+
+  xit "should call save only when different" do
   	subject.should_not_receive(:save)
-  	subject.verify(true)
+  	subject.verify("unicorns & sparkles")
   end
 
-  it "should call save when verifying with a true arg" do
-    subject.stub(:correct).and_return(false)
-    subject.stub(:save)
+  it "should call save when verified with expected result" do
     subject.should_receive(:save)
-    subject.verify(true)
+    subject.verify(subject.result)
   end
+
+  it "should set correct to false" do
+    subject.verify("fak")
+    subject.correct.should be_false
+  end
+
 end
