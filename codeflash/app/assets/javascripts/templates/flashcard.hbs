@@ -18,7 +18,7 @@
 			</p>
 		</div>
 		<div class="large-2 columns">
-			<button class="radius secondary label right" {{action destroy a}}>X</button>
+			<button class="radius secondary label right" {{action destroyAnswer a}}>X</button>
 			<i {{bind-attr class="a.imageClass"}}></i>
 		</div>
 	</div>
@@ -26,7 +26,7 @@
 {{/each}}
 <form id="new-answer">
 {{#with new_answer}}
-	{{view Ember.TextArea valueBinding=code rows="12" cols="70"}}
+	{{view Ember.TextArea valueBinding=code}}
 	<button {{action save}} class="secondary radius">add</button>
 {{/with}}
 </form>
