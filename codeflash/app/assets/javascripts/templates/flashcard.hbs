@@ -8,19 +8,20 @@
 </h3>
 <p class="subheader">
 &#8618;{{result}}</p>
+{{ outlet }}
 {{#each a in answers}}
-			<div class="row flashcard">
-				<div class="large-10 columns">
-					{{{a.raycode}}}
-					<p class="subheader">
-						&nbsp;&#8618;{{a.result}}
-					</p>
-				</div>
-				<div class="large-2 columns">
-					<button class="radius secondary label right" {{action destroy a}}>X</button>
-					<i {{bind-attr class="a.imageClass" classNames="right"}}></i>
-				</div>
-			</div>
+	<div class="row flashcard">
+		<div class="large-10 columns">
+			{{{a.raycode}}}
+			<p class="subheader">
+				&nbsp;&#8618;{{a.result}}
+			</p>
+		</div>
+		<div class="large-2 columns">
+			<button class="radius secondary label right" {{action destroy a}}>X</button>
+			<i {{bind-attr class="a.imageClass"}}></i>
+		</div>
+	</div>
 
 {{/each}}
 <form id="new-answer">
@@ -30,4 +31,3 @@
 {{/with}}
 </form>
 
-{{ outlet }}

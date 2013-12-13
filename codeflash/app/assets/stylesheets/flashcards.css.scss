@@ -14,4 +14,11 @@
 	a, h3 {
 		color: white !important;
 	}
+	a {
+		text-decoration: underline;
+	}
+
+	a:hover {
+		color: darken(white, 10%) !important;
+	}
 }
