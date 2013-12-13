@@ -27,4 +27,9 @@ describe Answer do
     subject.correct.should be_false
   end
 
+  it "should set result" do
+    subject.verify("44")
+    subject.result.should eq("44")
+  end
+
 end

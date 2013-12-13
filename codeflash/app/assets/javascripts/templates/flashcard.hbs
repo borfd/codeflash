@@ -4,7 +4,6 @@
 		{{#link-to 'flashcard.edit' classNames="label radius secondary right"}}edit{{/link-to}}
 	</div>	
 	{{description}} 
-	<small></small>
 
 </h3>
 <p class="subheader">
@@ -13,6 +12,9 @@
 			<div class="row flashcard">
 				<div class="large-10 columns">
 					{{{a.raycode}}}
+					<p class="subheader">
+						&nbsp;&#8618;{{a.result}}
+					</p>
 				</div>
 				<div class="large-2 columns">
 					<button class="radius secondary label right" {{action destroy a}}>X</button>
