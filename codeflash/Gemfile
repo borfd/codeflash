@@ -67,7 +67,7 @@ platform :ruby do
 	gem 'pg'
 end
 
-#gem 'puma'
+gem 'puma'
 gem "active_model_serializers"
 gem 'coffee-rails', '~> 4.0.0'
 # gem 'handlebars'
