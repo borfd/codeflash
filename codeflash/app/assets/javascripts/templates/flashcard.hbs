@@ -2,8 +2,8 @@
 	<div class="flashcard-actions">
 		<button {{action 'destroy'}} class="label radius alert right">X</button>
 		{{#link-to 'flashcard.edit' classNames="label radius secondary right"}}edit{{/link-to}}
-	</div>	
-	{{description}} 
+	</div>
+	{{description}}
 
 </h3>
 <p class="subheader">
@@ -27,7 +27,7 @@
 <form id="new-answer">
 {{#with new_answer}}
 	{{view Ember.TextArea valueBinding=code}}
-	<button {{action save}} class="secondary radius">add</button>
+	<button {{action save}} class="secondary radius">add answer</button>
 {{/with}}
 </form>
 

@@ -1,7 +1,7 @@
 Codeflash.FlashcardController = Ember.ObjectController.extend
 	needs: 'flashcards'
-	actions: 
-		save: ->	
+	actions:
+		save: ->
 			answer = @store.createRecord 'answer', @get('new_answer')
 			# Sandi says NO!
 			# Move into AnswersController
@@ -17,7 +17,7 @@ Codeflash.FlashcardController = Ember.ObjectController.extend
 			m = @get('model')
 			m.deleteRecord()
 			m.save()
-			@transitionTo('flashcards')
+			@transitionToRoute('flashcards')
 
 
 	new_answer: Em.Object.create()
