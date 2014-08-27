@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Answer do
 
-  subject { 
+  subject {
     answer = FactoryGirl.create(:answer)
     answer.stub(:save)
     answer
@@ -10,7 +10,7 @@ describe Answer do
 
 	it { should belong_to(:flashcard) }
   it { should respond_to(:verify) }
-  it { should validate_presence_of(:code) } 
+  it { should validate_presence_of(:code) }
 
   xit "should call save only when different" do
   	subject.should_not_receive(:save)
@@ -30,6 +30,16 @@ describe Answer do
   it "should set result" do
     subject.verify("44")
     subject.result.should eq("44")
+  end
+
+  it "should know how to compare answers" do
+    subject = FactoryGirl.create(:answer, expected: "   44
+
+
+    ")
+
+    subject.verify("44")
+    subject.correct.should be_true
   end
 
 end

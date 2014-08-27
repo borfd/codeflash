@@ -7,7 +7,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'shoulda-matchers'
-require 'factory_girl'
+require 'factory_girl_rails'
 FactoryGirl.find_definitions
 
 # Requires supporting ruby files with custom matchers and macros, etc,

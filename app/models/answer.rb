@@ -12,18 +12,26 @@ class Answer < ActiveRecord::Base
 		self.flashcard.result
 	end
 
-	def verify(result)	
-		self.correct = validate_result(result)		
+	def verify(result)
+		self.correct = validate_result(result)
 		self.result = result
-		self.save()	
+		self.save()
 		self.correct
 	end
 
 	def raycode
 		CodeRay.scan(self.code, :ruby).div(line_numers: :table)
 	end
-	private 
+	private
 		def validate_result(result)
-			result == expected
+			compare(result, expected)
+		end
+
+		def compare(a, b)
+			compare_func(a) == compare_func(b)
+		end
+
+		def compare_func(val)
+			val.delete('n').delete(' ')
 		end
 end
